@@ -1,25 +1,29 @@
+#!/usr/bin/env python3
+"""The poem about permission -- a borrowed umbrella.
+
+Writes the poem to $MAKEFUN_OUTPUT_DIR/entry.txt
+(default /output/entry.txt). Python 3.13, stdlib only,
+no network, deterministic.
+"""
+
 import os
+from pathlib import Path
 
-POEM = """You lent me your umbrella.
-I carried it closed
-through the rain,
-afraid to open
-what was yours.
-At your door I gave it back,
-dry as I found it.
-You laughed.
-'It was never the umbrella,'
-you said.
-'It was the walk.'"""
+POEM = """I borrowed your umbrella.
+It rained the whole way home,
+and I carried it closed,
+afraid to open what wasn't mine.
+
+You laughed when I brought it back dry.
+The umbrella was never the gift.
+The walk was.
+"""
 
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(POEM)
-    print(f"Wrote {len(POEM)} characters to {path}")
+def main() -> None:
+    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "entry.txt").write_text(POEM, encoding="utf-8")
 
 
 if __name__ == "__main__":

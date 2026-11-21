@@ -1,31 +1,18 @@
 # The poem about permission
 
-A short poem about agency: the power to ask and to be given.
+A small poem about permission, told through a borrowed umbrella.
+Someone lends you their umbrella; you carry it closed through the rain,
+afraid to open what is theirs; you return it dry as you found it — and
+learn the real gift was never the umbrella. It was the walk.
 
-`main.py` (Python 3.13, standard library only) writes the poem to
-`$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`).
-The poem is 216 characters, UTF-8, and fits the 1–280 character limit.
+> I borrowed your umbrella.
+> It rained the whole way home,
+> and I carried it closed,
+> afraid to open what wasn't mine.
+>
+> You laughed when I brought it back dry.
+> The umbrella was never the gift.
+> The walk was.
 
-## The poem
-
-> You lent me your umbrella.
-> I carried it closed
-> through the rain,
-> afraid to open
-> what was yours.
-> At your door I gave it back,
-> dry as I found it.
-> You laughed.
-> 'It was never the umbrella,'
-> you said.
-> 'It was the walk.'
-
-## Run
-
-```sh
-python3 main.py
-```
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+`main.py` (Python 3.13, stdlib only, no network, deterministic) writes the
+poem to `$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output/entry.txt`).
